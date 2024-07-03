@@ -17,6 +17,7 @@ struct std::formatter<R>{
         auto out = context.out();
 		const char* delimiter  = "";
 		out = std::format_to(out, "[");
+
 		for(auto&& element : r){
 			out = std::format_to(out, "{}", std::exchange(delimiter, ", " ));
 			context.advance_to(out);
